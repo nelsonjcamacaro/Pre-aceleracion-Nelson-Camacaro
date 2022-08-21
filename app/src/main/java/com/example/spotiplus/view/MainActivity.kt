@@ -41,6 +41,12 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+        viewModel.errorMessage.observe(this){
+            Toast.makeText(this@MainActivity,"Parece que hubo un error, el servidor no ha encontrado la informacion"
+                ,Toast.LENGTH_LONG).show()
+        }
+
         viewModel.loadMovies()
     }
 }

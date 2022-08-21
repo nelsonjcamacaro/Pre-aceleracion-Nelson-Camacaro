@@ -2,6 +2,7 @@ package com.example.spotiplus.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.spotiplus.R
 import com.example.spotiplus.databinding.ActivityMovieDetailsBinding
@@ -22,7 +23,7 @@ class MovieDetails : AppCompatActivity() {
         setContentView(binding.root)
         val movieId = intent.getIntExtra(KEY1,0)
 
-        viewModel.movieByIdTitle.observe(this){
+        viewModel.movieById.observe(this){
             if (it != null) {
                 binding.tvTitle.text = it.title
                 binding.tvOverview.text = it.overView
@@ -37,10 +38,14 @@ class MovieDetails : AppCompatActivity() {
             }
 //            binding.tvTitle.text = it.title
         }
+
+        viewModel.errorMessage.observe(this){
+            Toast.makeText(this@MovieDetails, "Parece que hubo un error, el servidor no ha encontrado la informacion"
+                , Toast.LENGTH_LONG).show()
+        }
         viewModel.loadMovieById(movieId)
     }
-
-    companion object{
+        companion object{
         const val KEY1 ="Id of movie"
     }
 }
