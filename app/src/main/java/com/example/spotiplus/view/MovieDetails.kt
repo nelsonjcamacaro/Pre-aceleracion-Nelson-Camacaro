@@ -36,14 +36,16 @@ class MovieDetails : AppCompatActivity() {
                     .into(binding.imageViewPoster)
 
             }
-//            binding.tvTitle.text = it.title
+        }
+        viewModel.errorMessage.observe(this){
+            if (it != null){
+                Toast.makeText(this@MovieDetails, "Parece que hubo un error, el servidor no ha encontrado la informacion"
+                    , Toast.LENGTH_LONG).show()
+            }
         }
 
-        viewModel.errorMessage.observe(this){
-            Toast.makeText(this@MovieDetails, "Parece que hubo un error, el servidor no ha encontrado la informacion"
-                , Toast.LENGTH_LONG).show()
-        }
         viewModel.loadMovieById(movieId)
+
     }
         companion object{
         const val KEY1 ="Id of movie"

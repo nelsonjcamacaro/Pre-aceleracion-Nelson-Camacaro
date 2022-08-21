@@ -49,8 +49,6 @@ class MoviesRemoteDataSource {
     }
 
 
-
-
     fun getMovieById(listener: ResponseListener<MovieByIdResponse>,movieId:Int ) {
         val service = RetrofitService.instance
             .create(GetMovieService::class.java)
