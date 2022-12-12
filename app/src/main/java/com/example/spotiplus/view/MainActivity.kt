@@ -3,9 +3,13 @@ package com.example.spotiplus.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+//import android.widget.LinearLayout.HORIZONTAL
 import android.widget.Toast
 import androidx.activity.viewModels
+//import androidx.constraintlayout.widget.ConstraintSet.HORIZONTAL
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
+import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import com.example.spotiplus.databinding.ActivityMainBinding
 import com.example.spotiplus.model.Movies
 import com.example.spotiplus.model.MoviesRecyclerAdapter
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
 
         viewModel.movies.observe(this){ listOfMovies ->
             if (listOfMovies != null){

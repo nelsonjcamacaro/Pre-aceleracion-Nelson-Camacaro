@@ -30,9 +30,9 @@ class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener:Mo
     inner class MoviesViewHolder(private val binding: CardViewBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(movie:Movies){
             val url = movie.poster
-            binding.tvTittle.text = movie.title
+            /** binding.tvTittle.text = movie.title
             binding.tvRanking.text = "Calificacion: ${movie.average.toString()}"
-            binding.tvYear.text = "Año: ${movie.date}"
+            binding.tvYear.text = "Año: ${movie.date}" **/
             Picasso.get()
                 .load("https://image.tmdb.org/t/p/original/$url")
                 .into(binding.ivPoster)
