@@ -1,4 +1,4 @@
-package com.example.spotiplus.model.repository
+package com.example.spotiplus.data.repository
 
 class RepositoryError(
     val message:String,

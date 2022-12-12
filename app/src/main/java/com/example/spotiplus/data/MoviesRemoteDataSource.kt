@@ -1,15 +1,17 @@
-package com.example.spotiplus.model
+package com.example.spotiplus.data
 
 import com.example.spotiplus.BuildConfig
-import com.example.spotiplus.model.repository.RepositoryError
-import com.example.spotiplus.model.repository.RepositoryResponse
+import com.example.spotiplus.data.popular.PopularMoviesResponse
+import com.example.spotiplus.data.repository.RepositoryError
+import com.example.spotiplus.data.repository.RepositoryResponse
+import com.example.spotiplus.data.repository.ResponseListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MoviesRemoteDataSource {
 
-    fun getPopularMovies(listener: ResponseListener<PopularMoviesResponse> ) {
+    fun getPopularMovies(listener: ResponseListener<PopularMoviesResponse>) {
         val service = RetrofitService.instance
             .create(GetMovieService::class.java)
             .getPopularMovies(BuildConfig.API_KEY)
@@ -49,7 +51,7 @@ class MoviesRemoteDataSource {
     }
 
 
-    fun getMovieById(listener: ResponseListener<MovieByIdResponse>,movieId:Int ) {
+    fun getMovieById(listener: ResponseListener<MovieByIdResponse>, movieId:Int ) {
         val service = RetrofitService.instance
             .create(GetMovieService::class.java)
             .getMovieById(movieId.toString(),BuildConfig.API_KEY)

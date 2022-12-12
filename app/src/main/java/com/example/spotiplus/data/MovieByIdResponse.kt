@@ -1,4 +1,4 @@
-package com.example.spotiplus.model
+package com.example.spotiplus.data
 
 import com.google.gson.annotations.SerializedName
 

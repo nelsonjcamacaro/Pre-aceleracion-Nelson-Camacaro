@@ -1,15 +1,12 @@
-package com.example.spotiplus.view
+package com.example.spotiplus.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.example.spotiplus.R
 import com.example.spotiplus.databinding.ActivityMovieDetailsBinding
-import com.example.spotiplus.model.MovieByIdResponse
-import com.example.spotiplus.model.Movies
-import com.example.spotiplus.viewmodel.MoviesViewModel
-import com.example.spotiplus.viewmodel.MoviesViewModelFactory
+import com.example.spotiplus.ui.viewmodel.MoviesViewModel
+import com.example.spotiplus.ui.viewmodel.MoviesViewModelFactory
 import com.squareup.picasso.Picasso
 
 class MovieDetails : AppCompatActivity() {

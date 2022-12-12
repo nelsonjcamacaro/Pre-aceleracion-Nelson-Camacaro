@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity"
+    tools:context=".ui.view.MainActivity"
     android:background="@color/softBlack">
 
     <LinearLayout
@@ -45,7 +45,7 @@
                 android:id="@+id/popular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="POPULAR"
+                android:text="@string/popular"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -72,7 +72,7 @@
                 android:id="@+id/tvTopRated"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TOP RATED"
+                android:text="@string/top_rated"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -100,7 +100,7 @@
                 android:id="@+id/tvUpcoming"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="UPCOMING"
+                android:text="@string/upcoming"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -128,7 +128,7 @@
                 android:id="@+id/tvTvPopular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="POPULAR TV SERIES"
+                android:text="@string/popular_tv_series"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -165,5 +165,6 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu"
         style="@style/Widget.MaterialComponents.BottomNavigationView"/>
-    
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

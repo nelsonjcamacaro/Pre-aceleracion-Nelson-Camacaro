@@ -1,27 +1,20 @@
-package com.example.spotiplus.view
+package com.example.spotiplus.ui.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-//import android.widget.LinearLayout.HORIZONTAL
 import android.widget.Toast
 import androidx.activity.viewModels
-//import androidx.constraintlayout.widget.ConstraintSet.HORIZONTAL
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
-import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
+import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.databinding.ActivityMainBinding
-import com.example.spotiplus.model.Movies
-import com.example.spotiplus.model.MoviesRecyclerAdapter
-import com.example.spotiplus.model.MoviesRemoteDataSource
-import com.example.spotiplus.viewmodel.MoviesViewModel
-import com.example.spotiplus.viewmodel.MoviesViewModelFactory
-import java.util.*
+import com.example.spotiplus.ui.viewmodel.MoviesViewModel
+import com.example.spotiplus.ui.viewmodel.MoviesViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val viewModel : MoviesViewModel by viewModels(
-        factoryProducer = {MoviesViewModelFactory()}
+        factoryProducer = { MoviesViewModelFactory() }
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +22,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerView2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerView3.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerView4.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
 
         viewModel.movies.observe(this){ listOfMovies ->
             if (listOfMovies != null){
                 val adapter = MoviesRecyclerAdapter(listOfMovies,object: MoviesRecyclerAdapter.MoviesListener{
                     override fun onClickMovie(movie: Movies) {
                         Toast.makeText(this@MainActivity, movie.title,Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@MainActivity,MovieDetails::class.java)
+                        val intent = Intent(this@MainActivity, MovieDetails::class.java)
                             .apply{ putExtra(MovieDetails.KEY1,movie.id) }
                         startActivity(intent)
                     }

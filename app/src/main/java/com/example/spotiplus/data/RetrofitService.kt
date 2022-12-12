@@ -1,4 +1,4 @@
-package com.example.spotiplus.model
+package com.example.spotiplus.data
 
 import com.example.spotiplus.BuildConfig
 import okhttp3.OkHttpClient

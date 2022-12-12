@@ -1,15 +1,17 @@
-package com.example.spotiplus.model
+package com.example.spotiplus.ui.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.databinding.CardViewBinding
 import com.squareup.picasso.Picasso
 
-class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener:MoviesListener?= null):RecyclerView.Adapter<MoviesRecyclerAdapter.MoviesViewHolder>() {
+class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener: MoviesListener?= null):
+    RecyclerView.Adapter<MoviesRecyclerAdapter.MoviesViewHolder>() {
 
     interface MoviesListener{
-        fun onClickMovie(movie:Movies)
+        fun onClickMovie(movie: Movies)
     }
 
 
@@ -28,7 +30,7 @@ class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener:Mo
     }
 
     inner class MoviesViewHolder(private val binding: CardViewBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(movie:Movies){
+        fun bind(movie: Movies){
             val url = movie.poster
             /** binding.tvTittle.text = movie.title
             binding.tvRanking.text = "Calificacion: ${movie.average.toString()}"

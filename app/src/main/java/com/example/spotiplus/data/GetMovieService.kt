@@ -1,5 +1,7 @@
-package com.example.spotiplus.model
+package com.example.spotiplus.data
 
+import com.example.spotiplus.data.popular.PopularMoviesResponse
+import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -11,4 +13,7 @@ interface GetMovieService {
 
     @GET("movie/{movie_id}")
     fun getMovieById(@Path("movie_id") id:String, @Query("api_key") apiKey:String): Call<MovieByIdResponse>
+
+    @GET("movie/top_rated")
+    fun getTopRatedMovies(@Query("api_key") apiKey:String):Call<TopRatedMoviesResponse>
 }

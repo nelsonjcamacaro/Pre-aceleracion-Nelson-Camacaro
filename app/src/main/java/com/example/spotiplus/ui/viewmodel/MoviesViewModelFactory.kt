@@ -1,9 +1,9 @@
-package com.example.spotiplus.viewmodel
+package com.example.spotiplus.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.spotiplus.model.MoviesRemoteDataSource
-import com.example.spotiplus.model.repository.MoviesRepository
+import com.example.spotiplus.data.MoviesRemoteDataSource
+import com.example.spotiplus.data.repository.MoviesRepository
 
 class MoviesViewModelFactory:ViewModelProvider.Factory {
     override fun <T:ViewModel> create(modelClass:Class<T>):T{
