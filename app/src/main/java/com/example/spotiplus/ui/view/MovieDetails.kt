@@ -44,7 +44,7 @@ class MovieDetails : AppCompatActivity() {
         viewModel.loadMovieById(movieId)
 
     }
-        companion object{
+    companion object{
         const val KEY1 ="Id of movie"
     }
 }
