@@ -5,9 +5,9 @@ import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.repository.RepositoryError
 import com.example.spotiplus.data.repository.RepositoryResponse
 import com.example.spotiplus.data.repository.ResponseListener
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.spotiplus.data.topRated.TopRatedMovies
+import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
+import retrofit2.*
 
 class MoviesRemoteDataSource {
 
@@ -89,5 +89,18 @@ class MoviesRemoteDataSource {
             }
 
         })
+    }
+
+    suspend fun getTopRatedMovies(): TopRatedMoviesResponse?{
+        val service = RetrofitService.instance.create(GetMovieService::class.java).getTopRatedMovies(BuildConfig.API_KEY)
+
+        try {
+            val response: Response<TopRatedMoviesResponse> = service.awaitResponse()
+            val topRatedMoviesResponse = response.body()
+            return topRatedMoviesResponse
+        }catch (e:Exception){
+            return null
+        }
+
     }
 }

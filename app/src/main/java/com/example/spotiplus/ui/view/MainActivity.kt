@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spotiplus.data.popular.Movies
+import com.example.spotiplus.data.topRated.TopRatedMovies
+import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 import com.example.spotiplus.databinding.ActivityMainBinding
 import com.example.spotiplus.ui.viewmodel.MoviesViewModel
 import com.example.spotiplus.ui.viewmodel.MoviesViewModelFactory
@@ -42,6 +44,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        viewModel.topRatedMovies.observe(this){listOfTopRatedMovies ->
+            if (listOfTopRatedMovies != null){
+                val adapter = TopRatedRecyclerAdapter(listOfTopRatedMovies.movies)
+                binding.recyclerView2.adapter = adapter
+            }
+        }
+
         viewModel.errorMessage.observe(this){
             if (it != null){
                 Toast.makeText(this@MainActivity,"Parece que hubo un error, el servidor no ha encontrado la informacion"
@@ -51,5 +60,6 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel.loadMovies()
+        viewModel.getTopRatedMovies()
     }
 }
