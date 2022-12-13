@@ -18,10 +18,8 @@ class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
     val movies = MutableLiveData<List<Movies>>(null)
     val errorMessage = MutableLiveData<String>(null)
     val topRatedMovies = MutableLiveData<TopRatedMoviesResponse?>(null)
-
-    /*init {
-        getTopRatedMovies()
-    }*/
+    val upcomingMovies = MutableLiveData<UpcomingMoviesResponse?>(null)
+    val popularTvSeries = MutableLiveData<PopularTVSeriesResponse?>(null)
 
     fun loadMovies(){
         repository.getPopular(object : ResponseListener<PopularMoviesResponse> {
@@ -57,7 +55,22 @@ class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
         viewModelScope.launch {
             val result = repository.getTopRatedMovies()
             topRatedMovies.value = result
-            println(result)
+        }
+    }
+
+    fun getUpcoming(){
+
+        viewModelScope.launch {
+            val result = repository.getUpcoming()
+            upcomingMovies.value = result
+        }
+    }
+
+    fun getPopularTVSeries(){
+
+        viewModelScope.launch {
+            val result = repository.popularTVSeries()
+            popularTvSeries.value = result
         }
     }
 }

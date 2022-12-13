@@ -51,6 +51,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        viewModel.upcomingMovies.observe(this){ listOfUpcomingMovies ->
+            if (listOfUpcomingMovies!= null){
+                val adapter = UpcomingRecyclerAdapter(listOfUpcomingMovies.movies)
+                binding.recyclerView3.adapter = adapter
+            }else{
+                Toast.makeText(this@MainActivity,"la parte de Upcoming retorna NULL"
+                    ,Toast.LENGTH_LONG).show()
+            }
+
+        }
+
+        viewModel.popularTvSeries.observe(this){ listOfPopularTvSeries ->
+            if (listOfPopularTvSeries!= null){
+                val adapter = PopularTvSeriesRecyclerAdapter(listOfPopularTvSeries.series)
+                    binding.recyclerView4.adapter = adapter
+
+            }
+
+        }
+
         viewModel.errorMessage.observe(this){
             if (it != null){
                 Toast.makeText(this@MainActivity,"Parece que hubo un error, el servidor no ha encontrado la informacion"
@@ -61,5 +81,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.loadMovies()
         viewModel.getTopRatedMovies()
+        viewModel.getUpcoming()
+        viewModel.getPopularTVSeries()
     }
 }

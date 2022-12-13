@@ -50,7 +50,6 @@ class MoviesRemoteDataSource {
         })
     }
 
-
     fun getMovieById(listener: ResponseListener<MovieByIdResponse>, movieId:Int ) {
         val service = RetrofitService.instance
             .create(GetMovieService::class.java)
@@ -94,13 +93,37 @@ class MoviesRemoteDataSource {
     suspend fun getTopRatedMovies(): TopRatedMoviesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getTopRatedMovies(BuildConfig.API_KEY)
 
-        try {
+        return try {
             val response: Response<TopRatedMoviesResponse> = service.awaitResponse()
             val topRatedMoviesResponse = response.body()
-            return topRatedMoviesResponse
+            topRatedMoviesResponse
         }catch (e:Exception){
-            return null
+            null
         }
 
+    }
+
+    suspend fun getUpcoming():UpcomingMoviesResponse?{
+        val service = RetrofitService.instance.create(GetMovieService::class.java).getUpcoming(BuildConfig.API_KEY)
+
+        return try {
+            val response: Response<UpcomingMoviesResponse> = service.awaitResponse()
+            val upcomingMoviesResponse = response.body()
+            upcomingMoviesResponse
+        }catch (e:Exception){
+            null
+        }
+    }
+
+    suspend fun popularTVSeries():PopularTVSeriesResponse?{
+        val service = RetrofitService.instance.create(GetMovieService::class.java).getPopularTVSeries(BuildConfig.API_KEY)
+
+        return try {
+            val response: Response<PopularTVSeriesResponse> = service.awaitResponse()
+            val popularTvSeries = response.body()
+            popularTvSeries
+        }catch (e:Exception){
+            null
+        }
     }
 }
