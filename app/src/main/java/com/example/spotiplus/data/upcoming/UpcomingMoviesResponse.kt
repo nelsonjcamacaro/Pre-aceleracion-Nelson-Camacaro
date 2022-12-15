@@ -1,15 +1,16 @@
-package com.example.spotiplus.data.latest
+package com.example.spotiplus.data.upcoming
 
+import com.example.spotiplus.data.upcoming.UpcomingMovies
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import java.util.Objects
 
-class LatestMoviesResponse(
+class UpcomingMoviesResponse(
     @SerializedName("page")
     val page:Int,
     @SerializedName("results")
-    val movies:List<LatestMovies>,
+    val movies:List<UpcomingMovies>,
     @SerializedName("dates")
-    val dates: Objects,
+    val dates:Objects,
     @SerializedName("total_results")
     val total_results: Int,
     @SerializedName("total_pages")

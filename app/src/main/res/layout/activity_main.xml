@@ -61,10 +61,10 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="220dp"
                 android:background="@color/softBlueBlack">
 
-                <androidx.viewpager.widget.PagerTitleStrip
+                <!--<androidx.viewpager.widget.PagerTitleStrip
                     android:id="@+id/pager_title_strip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:textColor="@android:color/white"
-                    android:background="@color/softBlueBlack" />
+                    android:background="@color/softBlueBlack" />-->
 
             </androidx.viewpager.widget.ViewPager>
 

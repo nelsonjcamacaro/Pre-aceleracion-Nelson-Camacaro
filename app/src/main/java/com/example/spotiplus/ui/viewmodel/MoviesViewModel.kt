@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.spotiplus.data.*
 import com.example.spotiplus.data.latest.LatestMovies
+import com.example.spotiplus.data.nowPlaying.NowPlayingMoviesResponse
 import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.repository.MoviesRepository
@@ -13,6 +14,7 @@ import com.example.spotiplus.data.repository.RepositoryResponse
 import com.example.spotiplus.data.repository.ResponseListener
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
+import com.example.spotiplus.data.upcoming.UpcomingMoviesResponse
 import kotlinx.coroutines.launch
 
 class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
@@ -22,8 +24,7 @@ class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
     val topRatedMovies = MutableLiveData<TopRatedMoviesResponse?>(null)
     val upcomingMovies = MutableLiveData<UpcomingMoviesResponse?>(null)
     val popularTvSeries = MutableLiveData<PopularTVSeriesResponse?>(null)
-    val latestMovies = MutableLiveData<LatestMovies?>(null)
-
+    val nowPlayingMovies = MutableLiveData<NowPlayingMoviesResponse?>(null)
     fun loadMovies(){
         repository.getPopular(object : ResponseListener<PopularMoviesResponse> {
             override fun onResponse(response: RepositoryResponse<PopularMoviesResponse>) {
@@ -76,11 +77,11 @@ class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
         }
     }
 
-    fun getLatestMovies(){
+    fun getNowPlayingMovies(){
 
         viewModelScope.launch {
-            val result = repository.getLatestMovies()
-            latestMovies.value = result
+            val result = repository.getNowPlayingMovies()
+            nowPlayingMovies.value = result
             //println("EN EL VIEW  MODEL $result")
 
         }

@@ -2,12 +2,14 @@ package com.example.spotiplus.data
 
 import com.example.spotiplus.BuildConfig
 import com.example.spotiplus.data.latest.LatestMovies
+import com.example.spotiplus.data.nowPlaying.NowPlayingMoviesResponse
 import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.repository.RepositoryError
 import com.example.spotiplus.data.repository.RepositoryResponse
 import com.example.spotiplus.data.repository.ResponseListener
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
+import com.example.spotiplus.data.upcoming.UpcomingMoviesResponse
 import retrofit2.*
 
 class MoviesRemoteDataSource {
@@ -104,7 +106,7 @@ class MoviesRemoteDataSource {
 
     }
 
-    suspend fun getUpcoming():UpcomingMoviesResponse?{
+    suspend fun getUpcoming(): UpcomingMoviesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getUpcoming(BuildConfig.API_KEY)
 
         return try {
@@ -130,13 +132,13 @@ class MoviesRemoteDataSource {
         }
     }
 
-    suspend fun getLatestMovies():LatestMovies?{
-        val service = RetrofitService.instance.create(GetMovieService::class.java).getLatestMovies(BuildConfig.API_KEY)
+    suspend fun getNowPlayingMovies():NowPlayingMoviesResponse?{
+        val service = RetrofitService.instance.create(GetMovieService::class.java).getNowPlaying(BuildConfig.API_KEY)
 
         return try {
-            val response: Response<LatestMovies> = service.awaitResponse()
-            val latestMovies = response.body()
-            latestMovies
+            val response: Response<NowPlayingMoviesResponse> = service.awaitResponse()
+            val nowPlayingMovies = response.body()
+            nowPlayingMovies
         }catch (e:Exception){
             println("en el remote data source")
             null

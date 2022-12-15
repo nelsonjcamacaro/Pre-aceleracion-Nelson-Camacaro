@@ -3,7 +3,7 @@ package com.example.spotiplus.ui.view
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.spotiplus.data.UpcomingMovies
+import com.example.spotiplus.data.upcoming.UpcomingMovies
 import com.example.spotiplus.databinding.CardViewBinding
 import com.squareup.picasso.Picasso
 

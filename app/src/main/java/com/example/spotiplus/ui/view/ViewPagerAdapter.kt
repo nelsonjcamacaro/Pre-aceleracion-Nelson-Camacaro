@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
-import com.example.spotiplus.data.latest.LatestMovies
+import com.example.spotiplus.data.nowPlaying.NowPlayingMovies
 import com.example.spotiplus.databinding.ViewPagerCardViewBinding
 import com.squareup.picasso.Picasso
+import kotlin.math.roundToLong
 
-class ViewPagerAdapter(private val context: Context, private val list: List<LatestMovies>): PagerAdapter() {
+class ViewPagerAdapter(private val context: Context, private val list: List<NowPlayingMovies>): PagerAdapter() {
     override fun getCount(): Int {
         return list.size
     }
@@ -29,7 +30,9 @@ class ViewPagerAdapter(private val context: Context, private val list: List<Late
         // Obtiene los datos del elemento actual y actualiza la vista
         val itemData = list[position]
 
-        val url = itemData.posterPath
+        val url = itemData.backdropPath
+        binding.viewPagerTittle.text = itemData.title
+        binding.viewPagerPoints.text = "vote score: ${itemData.voteAverage}"
         Picasso.get()
             .load("https://image.tmdb.org/t/p/original/$url")
             .into(binding.viewPagerPoster)

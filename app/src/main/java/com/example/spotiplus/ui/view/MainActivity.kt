@@ -68,9 +68,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        viewModel.latestMovies.observe(this){listOfLatestMovies ->
-            if (listOfLatestMovies !=null){
-                val adapter = ViewPagerAdapter(this, listOf(listOfLatestMovies))
+        viewModel.nowPlayingMovies.observe(this){listOfNowPlayingMovies ->
+            if (listOfNowPlayingMovies !=null){
+                val adapter = ViewPagerAdapter(this, listOfNowPlayingMovies.movies)
                 binding.viewPager.adapter = adapter
             }else{
                 Toast.makeText(this@MainActivity,"la parte de latest retorna NULL"
@@ -90,6 +90,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.getTopRatedMovies()
         viewModel.getUpcoming()
         viewModel.getPopularTVSeries()
-        viewModel.getLatestMovies()
+        viewModel.getNowPlayingMovies()
     }
 }
