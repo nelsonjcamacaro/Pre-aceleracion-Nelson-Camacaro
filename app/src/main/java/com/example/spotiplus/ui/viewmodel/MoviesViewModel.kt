@@ -63,6 +63,7 @@ class MoviesViewModel(private val repository: MoviesRepository):ViewModel() {
         viewModelScope.launch {
             val result = repository.getUpcoming()
             upcomingMovies.value = result
+            println("EN EL VIEW  MODEL $result")
         }
     }
 

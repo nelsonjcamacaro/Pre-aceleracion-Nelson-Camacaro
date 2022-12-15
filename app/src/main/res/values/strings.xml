@@ -3,8 +3,8 @@
     <string name="title_home">Home</string>
     <string name="search">search</string>
     <string name="more">more</string>
-    <string name="popular_tv_series">POPULAR TV SERIES</string>
-    <string name="upcoming">UPCOMING</string>
-    <string name="top_rated">TOP RATED</string>
-    <string name="popular">POPULAR</string>
+    <string name="popular_tv_series">Popular series</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="top_rated">Top rated</string>
+    <string name="popular">Popular</string>
 </resources>

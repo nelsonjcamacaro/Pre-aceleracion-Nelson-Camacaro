@@ -109,8 +109,10 @@ class MoviesRemoteDataSource {
         return try {
             val response: Response<UpcomingMoviesResponse> = service.awaitResponse()
             val upcomingMoviesResponse = response.body()
+            println("en el remote data source $upcomingMoviesResponse")
             upcomingMoviesResponse
         }catch (e:Exception){
+            println("en el remote data source")
             null
         }
     }

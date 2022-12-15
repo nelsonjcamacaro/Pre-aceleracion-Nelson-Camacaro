@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.upcomingMovies.observe(this){ listOfUpcomingMovies ->
-            if (listOfUpcomingMovies!= null){
+            if (listOfUpcomingMovies != null){
                 val adapter = UpcomingRecyclerAdapter(listOfUpcomingMovies.movies)
                 binding.recyclerView3.adapter = adapter
             }else{

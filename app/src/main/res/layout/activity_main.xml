@@ -7,39 +7,75 @@
     tools:context=".ui.view.MainActivity"
     android:background="@color/softBlack">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:background="@color/softBlack">
 
         <ImageView
-            android:layout_width="54dp"
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/spoti_plus_logo" />
+            android:src="@drawable/spoti_plus_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white"
+            android:layout_marginEnd="16dp" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_marginTop="50dp"
+    <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/scrollViewConstraint"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@color/softBlueBlack">
+
+                <androidx.viewpager.widget.PagerTitleStrip
+                    android:id="@+id/pager_title_strip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@android:color/white"
+                    android:background="@color/softBlueBlack" />
+
+            </androidx.viewpager.widget.ViewPager>
+
 
             <TextView
                 android:id="@+id/popular"
@@ -50,6 +86,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,15 +95,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_width="0dp"
-                android:layout_height="230dp"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTopRated"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/popular" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"/>
 
             <TextView
                 android:id="@+id/tvTopRated"
@@ -85,16 +118,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView2"
-                android:layout_width="0dp"
-                android:layout_height="230dp"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/tvUpcoming"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.157"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTopRated" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" />
 
             <TextView
                 android:id="@+id/tvUpcoming"
@@ -113,15 +141,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView3"
-                android:layout_width="0dp"
-                android:layout_height="230dp"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTvPopular"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvUpcoming" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" />
 
 
             <TextView
@@ -140,31 +164,31 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView4"
-                android:layout_width="0dp"
-                android:layout_height="230dp"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTvPopular" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"/>
+
+        </LinearLayout>
 
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+   <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu"
         style="@style/Widget.MaterialComponents.BottomNavigationView"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

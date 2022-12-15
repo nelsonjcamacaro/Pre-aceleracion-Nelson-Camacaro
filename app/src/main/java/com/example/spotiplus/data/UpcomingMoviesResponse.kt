@@ -1,6 +1,7 @@
 package com.example.spotiplus.data
 
 import com.google.gson.annotations.SerializedName
+import java.util.Objects
 
 class UpcomingMoviesResponse(
     @SerializedName("page")
@@ -8,7 +9,7 @@ class UpcomingMoviesResponse(
     @SerializedName("results")
     val movies:List<UpcomingMovies>,
     @SerializedName("dates")
-    val dates:List<String>,
+    val dates:Objects,
     @SerializedName("total_results")
     val total_results: Int,
     @SerializedName("total_pages")
