@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.spotiplus.data.latest.LatestMovies
 import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.data.topRated.TopRatedMovies
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
@@ -55,11 +56,7 @@ class MainActivity : AppCompatActivity() {
             if (listOfUpcomingMovies != null){
                 val adapter = UpcomingRecyclerAdapter(listOfUpcomingMovies.movies)
                 binding.recyclerView3.adapter = adapter
-            }else{
-                Toast.makeText(this@MainActivity,"la parte de Upcoming retorna NULL"
-                    ,Toast.LENGTH_LONG).show()
             }
-
         }
 
         viewModel.popularTvSeries.observe(this){ listOfPopularTvSeries ->
@@ -69,6 +66,16 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+        }
+
+        viewModel.latestMovies.observe(this){listOfLatestMovies ->
+            if (listOfLatestMovies !=null){
+                val adapter = ViewPagerAdapter(this, listOf(listOfLatestMovies))
+                binding.viewPager.adapter = adapter
+            }else{
+                Toast.makeText(this@MainActivity,"la parte de latest retorna NULL"
+                    ,Toast.LENGTH_LONG).show()
+            }
         }
 
         viewModel.errorMessage.observe(this){
@@ -83,5 +90,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.getTopRatedMovies()
         viewModel.getUpcoming()
         viewModel.getPopularTVSeries()
+        viewModel.getLatestMovies()
     }
 }

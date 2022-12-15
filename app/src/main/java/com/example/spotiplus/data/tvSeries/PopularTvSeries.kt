@@ -1,4 +1,4 @@
-package com.example.spotiplus.data
+package com.example.spotiplus.data.tvSeries
 
 import com.google.gson.annotations.SerializedName
 

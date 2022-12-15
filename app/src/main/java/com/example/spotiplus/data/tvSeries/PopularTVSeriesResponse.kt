@@ -1,6 +1,5 @@
-package com.example.spotiplus.data
+package com.example.spotiplus.data.tvSeries
 
-import com.example.spotiplus.data.topRated.TopRatedMovies
 import com.google.gson.annotations.SerializedName
 
 class PopularTVSeriesResponse (

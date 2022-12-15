@@ -2,8 +2,9 @@ package com.example.spotiplus.data.repository
 
 import com.example.spotiplus.data.MovieByIdResponse
 import com.example.spotiplus.data.MoviesRemoteDataSource
-import com.example.spotiplus.data.PopularTVSeriesResponse
+import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
 import com.example.spotiplus.data.UpcomingMoviesResponse
+import com.example.spotiplus.data.latest.LatestMovies
 import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 
@@ -25,7 +26,11 @@ class MoviesRepository(private val remoteDataSource: MoviesRemoteDataSource) {
         return remoteDataSource.getUpcoming()
     }
 
-    suspend fun popularTVSeries():PopularTVSeriesResponse?{
+    suspend fun popularTVSeries(): PopularTVSeriesResponse?{
         return remoteDataSource.popularTVSeries()
+    }
+
+    suspend fun getLatestMovies():LatestMovies?{
+        return remoteDataSource.getLatestMovies()
     }
 }

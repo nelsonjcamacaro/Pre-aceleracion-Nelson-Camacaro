@@ -1,12 +1,13 @@
 package com.example.spotiplus.data
 
 import com.example.spotiplus.BuildConfig
+import com.example.spotiplus.data.latest.LatestMovies
 import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.repository.RepositoryError
 import com.example.spotiplus.data.repository.RepositoryResponse
 import com.example.spotiplus.data.repository.ResponseListener
-import com.example.spotiplus.data.topRated.TopRatedMovies
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
+import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
 import retrofit2.*
 
 class MoviesRemoteDataSource {
@@ -109,15 +110,15 @@ class MoviesRemoteDataSource {
         return try {
             val response: Response<UpcomingMoviesResponse> = service.awaitResponse()
             val upcomingMoviesResponse = response.body()
-            println("en el remote data source $upcomingMoviesResponse")
+           // println("en el remote data source $upcomingMoviesResponse")
             upcomingMoviesResponse
         }catch (e:Exception){
-            println("en el remote data source")
+           // println("en el remote data source")
             null
         }
     }
 
-    suspend fun popularTVSeries():PopularTVSeriesResponse?{
+    suspend fun popularTVSeries(): PopularTVSeriesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getPopularTVSeries(BuildConfig.API_KEY)
 
         return try {
@@ -125,6 +126,19 @@ class MoviesRemoteDataSource {
             val popularTvSeries = response.body()
             popularTvSeries
         }catch (e:Exception){
+            null
+        }
+    }
+
+    suspend fun getLatestMovies():LatestMovies?{
+        val service = RetrofitService.instance.create(GetMovieService::class.java).getLatestMovies(BuildConfig.API_KEY)
+
+        return try {
+            val response: Response<LatestMovies> = service.awaitResponse()
+            val latestMovies = response.body()
+            latestMovies
+        }catch (e:Exception){
+            println("en el remote data source")
             null
         }
     }

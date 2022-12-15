@@ -1,7 +1,9 @@
 package com.example.spotiplus.data
 
+import com.example.spotiplus.data.latest.LatestMovies
 import com.example.spotiplus.data.popular.PopularMoviesResponse
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
+import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,4 +24,7 @@ interface GetMovieService {
 
     @GET("tv/popular")
     fun getPopularTVSeries(@Query("api_key") apiKey:String):Call<PopularTVSeriesResponse>
+
+    @GET("movie/latest")
+    fun getLatestMovies(@Query("api_key") apiKey:String):Call<LatestMovies>
 }
