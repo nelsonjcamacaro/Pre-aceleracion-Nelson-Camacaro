@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">SpotiPlus</string>
     <string name="title_home">Home</string>
-    <string name="search">search</string>
-    <string name="more">more</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
     <string name="popular_tv_series">Popular series</string>
     <string name="upcoming">Upcoming</string>
     <string name="top_rated">Top rated</string>
     <string name="popular">Popular</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="MoreFragment">MoreFragment</string>
+    <string name="pronto_tendremos_esta_seccion_lista_para_ti">Pronto tendremos esta seccion lista para ti</string>
 </resources>

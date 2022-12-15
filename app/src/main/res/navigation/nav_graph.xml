@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="search"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.spotiplus.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/moreFragment2"
+        android:name="com.example.spotiplus.MoreFragment"
+        android:label="more"
+        tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.spotiplus.HomeFragment"
+        android:label="home"
+        tools:layout="@layout/fragment_home" />
+</navigation>
