@@ -67,7 +67,6 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.8'
 
     //navigation component
-
     def nav_version = "2.5.3"
 
     // Kotlin
@@ -76,6 +75,10 @@ dependencies {
 
     // Feature module Support
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // shimmer for loader
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
