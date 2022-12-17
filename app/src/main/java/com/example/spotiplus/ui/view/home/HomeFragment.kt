@@ -1,7 +1,5 @@
-package com.example.spotiplus
+package com.example.spotiplus.ui.view.home
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,16 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.core.os.postDelayed
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.databinding.FragmentHomeBinding
-import com.example.spotiplus.ui.view.*
 import com.example.spotiplus.ui.viewmodel.MoviesViewModel
 import com.example.spotiplus.ui.viewmodel.MoviesViewModelFactory
 

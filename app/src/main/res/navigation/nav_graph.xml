@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_more" />
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.spotiplus.HomeFragment"
+        android:name="com.example.spotiplus.ui.view.home.HomeFragment"
         android:label="home"
         tools:layout="@layout/fragment_home" />
 </navigation>

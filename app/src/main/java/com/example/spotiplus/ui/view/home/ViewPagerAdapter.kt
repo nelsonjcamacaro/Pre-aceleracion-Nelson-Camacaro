@@ -1,4 +1,4 @@
-package com.example.spotiplus.ui.view
+package com.example.spotiplus.ui.view.home
 
 import android.content.Context
 import android.view.LayoutInflater
