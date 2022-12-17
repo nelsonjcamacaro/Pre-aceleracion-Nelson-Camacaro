@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.databinding.FragmentHomeBinding
 import com.example.spotiplus.ui.viewmodel.MoviesViewModel
@@ -34,13 +35,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        binding.recyclerView2.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        binding.recyclerView3.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        binding.recyclerView4.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-
+        recyclerViewInstance(binding.recyclerView)
+        recyclerViewInstance(binding.recyclerView2)
+        recyclerViewInstance(binding.recyclerView3)
+        recyclerViewInstance(binding.recyclerView4)
         viewModel.loadMovies()
         viewModel.getTopRatedMovies()
         viewModel.getUpcoming()
@@ -118,5 +117,9 @@ class HomeFragment : Fragment() {
 
         },1500)
 
+    }
+
+    private fun recyclerViewInstance(recyclerId: RecyclerView){
+        recyclerId.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
     }
 }
