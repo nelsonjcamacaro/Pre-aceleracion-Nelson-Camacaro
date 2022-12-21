@@ -8,16 +8,15 @@ Work in Progress...
 
 ANTES
 
-![WhatsApp Image 2022-12-09 at 9 35 18 AM](https://user-images.githubusercontent.com/67508494/209012418-e4615e98-95c1-4237-9252-8621aa851517.jpeg)
+![foto1](https://user-images.githubusercontent.com/67508494/209014641-36ae5f44-b12c-4d8e-ad27-1c0df751c563.jpg)
 
 AHORA
 
-![WhatsApp Image 2022-12-21 at 7 17 59 PM](https://user-images.githubusercontent.com/67508494/209013350-fd0438cb-5c30-4836-bfa5-61bfc326ef82.jpeg)
+![foto2](https://user-images.githubusercontent.com/67508494/209015085-289ce2c1-227b-433a-833a-d6f226899adf.jpg)
 
 
 
-
-![WhatsApp Image 2022-12-21 at 7 17 58 PM](https://user-images.githubusercontent.com/67508494/209013286-be6c4118-7889-4bf6-a215-dfc322ec1486.jpeg)
+![foto3](https://user-images.githubusercontent.com/67508494/209015113-db24ee8e-d3e9-49b2-80c9-28421d3a0951.jpg)
 
 
 
