@@ -10,4 +10,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="MoreFragment">MoreFragment</string>
     <string name="pronto_tendremos_esta_seccion_lista_para_ti">Pronto tendremos esta seccion lista para ti</string>
+    <string name="Searched">Searched</string>
 </resources>

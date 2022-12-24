@@ -10,6 +10,8 @@ import com.example.spotiplus.data.repository.ResponseListener
 import com.example.spotiplus.data.topRated.TopRatedMoviesResponse
 import com.example.spotiplus.data.tvSeries.PopularTVSeriesResponse
 import com.example.spotiplus.data.upcoming.UpcomingMoviesResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.*
 
 class MoviesRemoteDataSource {
@@ -96,12 +98,14 @@ class MoviesRemoteDataSource {
     suspend fun getTopRatedMovies(): TopRatedMoviesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getTopRatedMovies(BuildConfig.API_KEY)
 
-        return try {
-            val response: Response<TopRatedMoviesResponse> = service.awaitResponse()
-            val topRatedMoviesResponse = response.body()
-            topRatedMoviesResponse
-        }catch (e:Exception){
-            null
+        return withContext(Dispatchers.IO){
+            try {
+                val response: Response<TopRatedMoviesResponse> = service.awaitResponse()
+                val topRatedMoviesResponse = response.body()
+                topRatedMoviesResponse
+            }catch (e:Exception){
+                null
+            }
         }
 
     }
@@ -109,39 +113,46 @@ class MoviesRemoteDataSource {
     suspend fun getUpcoming(): UpcomingMoviesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getUpcoming(BuildConfig.API_KEY)
 
-        return try {
-            val response: Response<UpcomingMoviesResponse> = service.awaitResponse()
-            val upcomingMoviesResponse = response.body()
-           // println("en el remote data source $upcomingMoviesResponse")
-            upcomingMoviesResponse
-        }catch (e:Exception){
-           // println("en el remote data source")
-            null
+        return withContext(Dispatchers.IO){
+            try {
+                val response: Response<UpcomingMoviesResponse> = service.awaitResponse()
+                val upcomingMoviesResponse = response.body()
+                // println("en el remote data source $upcomingMoviesResponse")
+                upcomingMoviesResponse
+            }catch (e:Exception){
+                // println("en el remote data source")
+                null
+            }
         }
     }
 
     suspend fun popularTVSeries(): PopularTVSeriesResponse?{
         val service = RetrofitService.instance.create(GetMovieService::class.java).getPopularTVSeries(BuildConfig.API_KEY)
 
-        return try {
-            val response: Response<PopularTVSeriesResponse> = service.awaitResponse()
-            val popularTvSeries = response.body()
-            popularTvSeries
-        }catch (e:Exception){
-            null
+        return withContext(Dispatchers.IO){
+            try {
+                val response: Response<PopularTVSeriesResponse> = service.awaitResponse()
+                val popularTvSeries = response.body()
+                popularTvSeries
+            }catch (e:Exception){
+                null
+            }
         }
     }
 
     suspend fun getNowPlayingMovies():NowPlayingMoviesResponse?{
+
         val service = RetrofitService.instance.create(GetMovieService::class.java).getNowPlaying(BuildConfig.API_KEY)
 
-        return try {
-            val response: Response<NowPlayingMoviesResponse> = service.awaitResponse()
-            val nowPlayingMovies = response.body()
-            nowPlayingMovies
-        }catch (e:Exception){
-            println("en el remote data source")
-            null
+        return withContext(Dispatchers.IO){
+            try {
+                val response: Response<NowPlayingMoviesResponse> = service.awaitResponse()
+                val nowPlayingMovies = response.body()
+                nowPlayingMovies
+            }catch (e:Exception){
+                println("en el remote data source")
+                null
+            }
         }
     }
 }

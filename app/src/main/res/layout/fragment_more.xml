@@ -4,7 +4,7 @@
     android:id="@+id/moreFragment2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoreFragment">
+    tools:context=".ui.view.more.MoreFragment">
 
     <TextView
         android:layout_width="match_parent"

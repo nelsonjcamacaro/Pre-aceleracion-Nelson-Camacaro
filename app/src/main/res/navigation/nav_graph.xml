@@ -8,12 +8,12 @@
 
     <fragment
         android:id="@+id/searchFragment2"
-        android:name="com.example.spotiplus.SearchFragment"
+        android:name="com.example.spotiplus.ui.view.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/moreFragment2"
-        android:name="com.example.spotiplus.MoreFragment"
+        android:name="com.example.spotiplus.ui.view.more.MoreFragment"
         android:label="more"
         tools:layout="@layout/fragment_more" />
     <fragment
