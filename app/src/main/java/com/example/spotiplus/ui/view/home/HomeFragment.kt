@@ -57,23 +57,19 @@ class HomeFragment : Fragment() {
     }
 
     private fun recyclersOk(){
-
         Handler(Looper.getMainLooper()).postDelayed({
+
+            shimmerVisibility()
 
             viewModel.movies.observe(viewLifecycleOwner){ listOfMovies ->
                 if (listOfMovies != null){
                     val adapter = MoviesRecyclerAdapter(listOfMovies,object: MoviesRecyclerAdapter.MoviesListener{
                         override fun onClickMovie(movie: Movies) {
                             Toast.makeText(context, movie.title, Toast.LENGTH_SHORT).show()
-                            /*val intent = Intent(this@HomeFragment, MovieDetails::class.java)
-                                .apply{ putExtra(MovieDetails.KEY1,movie.id) }
-                            startActivity(intent)*/
                         }
-
                     })
                     binding.recyclerView.adapter = adapter
                 }
-
             }
 
             viewModel.topRatedMovies.observe(viewLifecycleOwner){listOfTopRatedMovies ->
@@ -95,7 +91,6 @@ class HomeFragment : Fragment() {
                     val adapter = PopularTvSeriesRecyclerAdapter(listOfPopularTvSeries.series)
                     binding.recyclerView4.adapter = adapter
                 }
-
             }
 
             viewModel.nowPlayingMovies.observe(viewLifecycleOwner){listOfNowPlayingMovies ->
@@ -112,11 +107,7 @@ class HomeFragment : Fragment() {
                         , Toast.LENGTH_LONG).show()
                 }
             }
-
-            shimmerVisibility()
-
         },1500)
-
     }
 
     private fun recyclerViewInstance(recyclerId: RecyclerView){

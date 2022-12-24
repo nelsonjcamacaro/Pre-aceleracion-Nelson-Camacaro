@@ -39,10 +39,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/list_item_container"
         android:queryBackground="@color/white"
+        android:textColor="@color/white"
+        android:hint="@string/search"
+        android:textColorHint="@color/softGray"
         android:background="@color/softBlueBlack"
         android:searchHintIcon="@color/white"
-        android:queryHint="@string/search"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/white"
+        android:textCursorDrawable="@color/white"
+        android:paddingStart="8dp"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
