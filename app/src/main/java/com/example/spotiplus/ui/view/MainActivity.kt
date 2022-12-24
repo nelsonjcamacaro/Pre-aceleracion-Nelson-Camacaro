@@ -18,7 +18,7 @@ import com.example.spotiplus.ui.viewmodel.MoviesViewModel
 import com.example.spotiplus.ui.viewmodel.MoviesViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

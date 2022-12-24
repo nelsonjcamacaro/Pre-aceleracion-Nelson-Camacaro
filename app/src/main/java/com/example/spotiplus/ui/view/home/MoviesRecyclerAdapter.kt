@@ -7,7 +7,7 @@ import com.example.spotiplus.data.popular.Movies
 import com.example.spotiplus.databinding.CardViewBinding
 import com.squareup.picasso.Picasso
 
-class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener: MoviesListener?= null):
+class MoviesRecyclerAdapter(private var moviesList:List<Movies>, val listener: MoviesListener?= null):
     RecyclerView.Adapter<MoviesRecyclerAdapter.MoviesViewHolder>() {
 
     interface MoviesListener{
@@ -29,12 +29,14 @@ class MoviesRecyclerAdapter(private val moviesList:List<Movies>, val listener: M
         return moviesList.size
     }
 
+    fun updateMovies(movies:List<Movies>){
+        this.moviesList = movies
+        notifyDataSetChanged()
+    }
+
     inner class MoviesViewHolder(private val binding: CardViewBinding):RecyclerView.ViewHolder(binding.root){
         fun bind(movie: Movies){
             val url = movie.poster
-            /** binding.tvTittle.text = movie.title
-            binding.tvRanking.text = "Calificacion: ${movie.average.toString()}"
-            binding.tvYear.text = "Año: ${movie.date}" **/
             Picasso.get()
                 .load("https://image.tmdb.org/t/p/original/$url")
                 .into(binding.ivPoster)
