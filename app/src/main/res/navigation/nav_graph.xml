@@ -21,5 +21,13 @@
         android:name="com.example.spotiplus.ui.view.home.HomeFragment"
         android:label="home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_detailsDialogFragment2"
+            app:destination="@id/detailsDialogFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/detailsDialogFragment2"
+        android:name="com.example.spotiplus.ui.view.detailsDialogFragment"
+        android:label="fragment_details_dialog"
+        tools:layout="@layout/fragment_details_dialog" />
 </navigation>

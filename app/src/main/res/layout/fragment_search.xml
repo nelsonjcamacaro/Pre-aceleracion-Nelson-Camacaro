@@ -52,7 +52,7 @@
         android:drawablePadding="8dp"
         android:drawableTint="@color/white"
         android:textCursorDrawable="@color/white"
-        android:paddingStart="8dp"/>
+        android:paddingStart="4dp"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -100,7 +100,7 @@
                     android:id="@+id/recyclerViewSearch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="32dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:foregroundGravity="center"
@@ -110,9 +110,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

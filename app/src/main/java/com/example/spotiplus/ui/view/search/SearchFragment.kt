@@ -40,7 +40,7 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerViewSearch.layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL,false)
+        binding.recyclerViewSearch.layoutManager = GridLayoutManager(context,3,GridLayoutManager.VERTICAL,false)
         viewModel.movies.observe(viewLifecycleOwner){ listOfMovies ->
             if (listOfMovies != null){
                 val adapter = MoviesRecyclerAdapter(listOfMovies,object: MoviesRecyclerAdapter.MoviesListener{

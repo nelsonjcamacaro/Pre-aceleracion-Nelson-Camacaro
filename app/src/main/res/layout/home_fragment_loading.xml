@@ -8,39 +8,6 @@
     tools:context=".ui.view.MainActivity"
     android:background="@color/softBlack">
 
-    <!--<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/headerLoading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/softBlack">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:src="@drawable/spoti_plus_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <ImageView
-            android:id="@+id/search_button"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white"
-            android:layout_marginEnd="16dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -77,7 +44,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -88,12 +55,13 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="8dp">
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading1"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -101,8 +69,8 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading2"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -110,8 +78,17 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading3"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"/>
+                <include layout="@layout/card_view"
+                    android:id="@+id/recyclerViewLoading13"
+                    android:background="@color/softBlueBlack"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -129,22 +106,23 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView"/>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="8dp">
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading4"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -152,8 +130,8 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading5"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -161,8 +139,17 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading6"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"/>
+                <include layout="@layout/card_view"
+                    android:id="@+id/recyclerViewLoading14"
+                    android:background="@color/softBlueBlack"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -179,7 +166,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -189,12 +176,13 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="8dp">
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading7"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -202,8 +190,8 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading8"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -211,15 +199,23 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading9"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"/>
+                <include layout="@layout/card_view"
+                    android:id="@+id/recyclerViewLoading15"
+                    android:background="@color/softBlueBlack"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
                     android:orientation="horizontal"/>
 
             </LinearLayout>
-
 
             <View
                 android:id="@+id/tvTvPopularLoading"
@@ -230,7 +226,7 @@
                 android:background="@color/softBlueBlack"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -239,12 +235,13 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="8dp">
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading10"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -252,8 +249,8 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading11"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
@@ -261,8 +258,17 @@
                 <include layout="@layout/card_view"
                     android:id="@+id/recyclerViewLoading12"
                     android:background="@color/softBlueBlack"
-                    android:layout_width="140dp"
-                    android:layout_height="210dp"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"/>
+                <include layout="@layout/card_view"
+                    android:id="@+id/recyclerViewLoading16"
+                    android:background="@color/softBlueBlack"
+                    android:layout_width="110dp"
+                    android:layout_height="165dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="8dp"
